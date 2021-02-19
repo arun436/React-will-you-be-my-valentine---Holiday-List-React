@@ -4,8 +4,7 @@ import '../styles/App.css';
 
 class App extends Component {
   constructor(props) {
-    super(props)
-
+    super(props);
     this.cityList = [{ name: 'Goa', country: 'India' },
     { name: 'Amsterdam', country: 'Netherlands' },
     { name: 'New York', country: 'USA' },
@@ -38,26 +37,31 @@ class App extends Component {
   }
 
   render() {
-    var GoaCity = this.cityList.filter((item,itemIndex) => {
+    var GoaBoolean = false;
+    var GoaCity = this.cityList.filter((item) => {
+      if(item.name === 'Goa' && GoaBoolean === false)
+      {
+        GoaBoolean = true;
         return item.name === 'Goa';
+      }
     });
-    var AmsterdamCity = this.cityList.filter((item,itemIndex) => {
+    var AmsterdamCity = this.cityList.filter((item) => {
       return item.name === 'Amsterdam';
     });
 
-    var NewYorkCity = this.cityList.filter((item,itemIndex) => {
+    var NewYorkCity = this.cityList.filter((item) => {
       return item.name === 'New York';
     });
 
-    var DarjeelingCity = this.cityList.filter((item,itemIndex) => {
+    var DarjeelingCity = this.cityList.filter((item) => {
       return item.name === 'Darjeeling';
     })
 
-    var TokyoCity = this.cityList.filter((item,itemIndex) => {
+    var TokyoCity = this.cityList.filter((item) => {
       return item.name === 'Tokyo';
     })
 
-    var LonavalaCity = this.cityList.filter((item,itemIndex) => {
+    var LonavalaCity = this.cityList.filter((item) => {
       return item.name === 'Lonavala';
     })
 
@@ -68,7 +72,7 @@ class App extends Component {
         <ol>
           {newCityList.map((item,itemIndex) => (
           <li key={`location${itemIndex+1}`}>{item.name}</li>
-          ))}
+          ))};
         </ol>
       </div>
     );
