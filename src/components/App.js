@@ -67,12 +67,13 @@ class App extends Component {
 
     var newCityList = [...GoaCity,...AmsterdamCity,...NewYorkCity,...DarjeelingCity,...TokyoCity,...LonavalaCity];
 
+
     return (
       <div id="main">
         <ol>
-          {newCityList.map((item,itemIndex) => (
-          <li key={`location${itemIndex+1}`}>{item.name}</li>
-          ))};
+          {newCityList.map((item, index) => (
+            <li key={`location${index + 1}`}>{item.name}</li>
+          ))}
         </ol>
       </div>
     );
