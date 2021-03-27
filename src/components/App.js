@@ -37,41 +37,48 @@ class App extends Component {
   }
 
   render() {
-    var GoaBoolean = false;
-    var GoaCity = this.cityList.filter((item) => {
-      if(item.name === 'Goa' && GoaBoolean === false)
-      {
-        GoaBoolean = true;
-        return item.name === 'Goa';
-      }
-    });
-    var AmsterdamCity = this.cityList.filter((item) => {
-      return item.name === 'Amsterdam';
-    });
+    // var GoaBoolean = false;
+    // var GoaCity = this.cityList.filter((item) => {
+    //   if(item.name === 'Goa' && GoaBoolean === false)
+    //   {
+    //     GoaBoolean = true;
+    //     return item.name === 'Goa';
+    //   }
+    // });
+    // var AmsterdamCity = this.cityList.filter((item) => {
+    //   return item.name === 'Amsterdam';
+    // });
 
-    var NewYorkCity = this.cityList.filter((item) => {
-      return item.name === 'New York';
-    });
+    // var NewYorkCity = this.cityList.filter((item) => {
+    //   return item.name === 'New York';
+    // });
 
-    var DarjeelingCity = this.cityList.filter((item) => {
-      return item.name === 'Darjeeling';
-    })
+    // var DarjeelingCity = this.cityList.filter((item) => {
+    //   return item.name === 'Darjeeling';
+    // })
 
-    var TokyoCity = this.cityList.filter((item) => {
-      return item.name === 'Tokyo';
-    })
+    // var TokyoCity = this.cityList.filter((item) => {
+    //   return item.name === 'Tokyo';
+    // })
 
-    var LonavalaCity = this.cityList.filter((item) => {
-      return item.name === 'Lonavala';
-    })
+    // var LonavalaCity = this.cityList.filter((item) => {
+    //   return item.name === 'Lonavala';
+    // })
 
-    var newCityList = [...GoaCity,...AmsterdamCity,...NewYorkCity,...DarjeelingCity,...TokyoCity,...LonavalaCity];
+    // var newCityList = [...GoaCity,...AmsterdamCity,...NewYorkCity,...DarjeelingCity,...TokyoCity,...LonavalaCity];
+    // var ansCityList = [];
+    // ansCityList = this.cityList.filter((item) => {
+    //   if(item.country === 'India' && !ansCityList.includes(item.name))
+    //   {
+
+    //   }
+    // })
 
 
     return (
         <ol>
-          {newCityList.map((item, itemIndex) => (
-            <li key={`location${itemIndex+1}`}>{item.name}</li>
+          {this.cityList.filter(item => item.country === 'India').map((filteredItem,filteredItemIndex) => (
+            <li key={`location${filteredItemIndex+1}`}>{filteredItem.name}</li>
           ))}
         </ol>
     );
